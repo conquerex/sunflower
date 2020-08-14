@@ -26,8 +26,16 @@ import androidx.room.Transaction
 /**
  * The Data Access Object for the [GardenPlanting] class.
  */
+/*
+    (p293, DAO를 사용한 데이터 접근)
+    UI 스레드를 사용하여 쿼리하는 또 다른 방법은 LiveData 또는 Flowable 인스턴스를 반환하는 쿼리를 작성하는 것이다.
+ */
 @Dao
 interface GardenPlantingDao {
+    /*
+        (p298, Observable 쿼리하기)
+        쿼리한 결과가 변경될 때마다 UI도 자동으로 업데이트되기를 원할 것이다.
+     */
     @Query("SELECT * FROM garden_plantings")
     fun getGardenPlantings(): LiveData<List<GardenPlanting>>
 

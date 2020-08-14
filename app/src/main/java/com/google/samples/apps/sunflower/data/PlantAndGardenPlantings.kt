@@ -24,6 +24,7 @@ import androidx.room.Relation
  * used by Room to fetch the related entities.
  */
 data class PlantAndGardenPlantings(
+    // p289, 내장된 객체 생성하기
     @Embedded
     val plant: Plant,
 

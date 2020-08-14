@@ -22,6 +22,15 @@ import androidx.room.PrimaryKey
 import java.util.Calendar
 import java.util.Calendar.DAY_OF_YEAR
 
+/*
+    (p278, Room)
+    SQLite에 대한 추상화 계층을 제공하여 SQLite의 모든 기능을 활용하면서 쉬운 데이터베이스 액세스를 허용.
+
+    ====
+
+    (p282, 엔티티 정의하기)
+    SQLite에서 테이블 이름은 대소문자를 구분하지 않는다.
+ */
 @Entity(tableName = "plants")
 data class Plant(
     @PrimaryKey @ColumnInfo(name = "id") val plantId: String,
