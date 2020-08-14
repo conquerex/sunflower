@@ -57,6 +57,15 @@ class PlantDetailFragment : Fragment() {
             inflater, R.layout.fragment_plant_detail, container, false
         ).apply {
             viewModel = plantDetailViewModel
+            /*
+                (p256, LifecycleOwner)
+                LifecycleOwner는 Lifecycle의 소유권을 추상화하는 인터페이스.
+                AppCompatActivity 또는 Fragment는 LifecycleOwner를 구현하여
+                다른 코드들이 자체적인 생명 주기에 반응하여 작동하도록 할 수 있다.
+                .
+                LifecycleOwner : 생명 주기 정보를 제공
+                LifecycleObserver : 생명 주기의 변화를 관찰
+             */
             lifecycleOwner = viewLifecycleOwner
             callback = object : Callback {
                 override fun add(plant: Plant?) {
