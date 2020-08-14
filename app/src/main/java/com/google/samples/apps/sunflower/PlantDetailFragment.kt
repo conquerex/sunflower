@@ -65,6 +65,15 @@ class PlantDetailFragment : Fragment() {
                 .
                 LifecycleOwner : 생명 주기 정보를 제공
                 LifecycleObserver : 생명 주기의 변화를 관찰
+
+                =========
+
+                (p269, Observable 필드를 LiveData로 마이그레이션하기)
+                LiveData와 바인딩 클래스를 같이 사용하려면 바인딩 클래스에 LifecycleOwner를 명시하여,
+                생명 주기를 인식하고 이에 따라 LiveData가 반응할 수 있도록 해야 한다.
+                ObservableField ===> LiveData
+                .
+                일반적으로는 레이아웃에서 뷰-모델 변수를 선언하고, 뷰-모델이 가진 멤버로 LiveData를 참조하는 것을 권장.
              */
             lifecycleOwner = viewLifecycleOwner
             callback = object : Callback {

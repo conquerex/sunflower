@@ -16,6 +16,10 @@
 
 package com.google.samples.apps.sunflower.viewmodels
 
+/*
+    (p259, LiveData)
+    관찰 가능한(Observable) 데이터 클래스, Lifecycle을 통해 생명 주기를 인식.
+ */
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.google.samples.apps.sunflower.data.GardenPlantingRepository
