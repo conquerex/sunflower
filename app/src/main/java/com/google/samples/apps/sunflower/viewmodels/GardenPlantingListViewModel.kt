@@ -19,6 +19,11 @@ package com.google.samples.apps.sunflower.viewmodels
 /*
     (p259, LiveData)
     관찰 가능한(Observable) 데이터 클래스, Lifecycle을 통해 생명 주기를 인식.
+
+    ====
+
+    p272, ViewModel 클래스는 생명 주기를 인식하며, UI와 관련된 데이터를 저장하고 관리한다.
+    화면 회전 같은 구성 변경에서도 살아남아 데이터를 보존한다.
  */
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel

@@ -56,6 +56,10 @@ class GardenFragment : Fragment() {
     }
 
     private fun subscribeUi(adapter: GardenPlantingAdapter, binding: FragmentGardenBinding) {
+        /*
+            (p274)
+            LiveData를 관찰하고 이곳에서 UI 처리를 한다.
+         */
         viewModel.plantAndGardenPlantings.observe(viewLifecycleOwner) { result ->
             binding.hasPlantings = !result.isNullOrEmpty()
             adapter.submitList(result)

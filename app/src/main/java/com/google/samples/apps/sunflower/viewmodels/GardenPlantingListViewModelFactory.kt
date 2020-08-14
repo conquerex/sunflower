@@ -24,6 +24,11 @@ import com.google.samples.apps.sunflower.data.GardenPlantingRepository
  * Factory for creating a [GardenPlantingListViewModel] with a constructor that takes a
  * [GardenPlantingRepository].
  */
+/*
+    (p277, 프래그먼트 간 데이터 공유하기)
+    프래그먼트 내에서 뷰 모델을 생성하는 데 사용한 액티비티를 얻고,
+    이를 사용하여 ViewModelProviders로부터 공통된 SharedViewModel 인스턴스를 얻을 수 있다.
+ */
 class GardenPlantingListViewModelFactory(
     private val repository: GardenPlantingRepository
 ) : ViewModelProvider.Factory {
