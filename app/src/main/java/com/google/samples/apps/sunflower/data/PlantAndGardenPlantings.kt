@@ -28,6 +28,11 @@ data class PlantAndGardenPlantings(
     @Embedded
     val plant: Plant,
 
+    /*
+        (p304, 관계있느느 엔티티 가져오기)
+        @Relation은 POJO에서 관계 엔티티를 자동으로 가져오는데 사용할 수 있는 편리한 애노테이션이다.
+        @Relation 애노테이션이 달린 필드의 유형은 반드시 List 또는 Set여야 한다.
+     */
     @Relation(parentColumn = "id", entityColumn = "plant_id")
     val gardenPlantings: List<GardenPlanting> = emptyList()
 )

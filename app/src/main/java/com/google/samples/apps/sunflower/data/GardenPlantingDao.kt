@@ -50,6 +50,7 @@ interface GardenPlantingDao {
     @Query("SELECT * FROM plants WHERE id IN (SELECT DISTINCT(plant_id) FROM garden_plantings)")
     fun getPlantedGardens(): LiveData<List<PlantAndGardenPlantings>>
 
+    // p302, 코루틴과 비동기 메서드 작성하기
     @Insert
     suspend fun insertGardenPlanting(gardenPlanting: GardenPlanting): Long
 
