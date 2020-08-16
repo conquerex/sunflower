@@ -68,6 +68,11 @@ class GalleryAdapter : PagingDataAdapter<UnsplashPhoto, GalleryViewHolder>(Galle
     }
 }
 
+/*
+    (p333)
+    PagedListAdapter는 데이터가 무효가 되었을 때 새로운 데이터와 이전 데이터를 비교하여
+    자연스러운 애니메이션 등의 효과 연출을 위해 DiffUtil.ItemCallback을 반드시 구현해야 한다.
+ */
 private class GalleryDiffCallback : DiffUtil.ItemCallback<UnsplashPhoto>() {
     override fun areItemsTheSame(oldItem: UnsplashPhoto, newItem: UnsplashPhoto): Boolean {
         return oldItem.id == newItem.id

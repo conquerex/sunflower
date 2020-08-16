@@ -59,6 +59,13 @@ class GardenFragment : Fragment() {
         /*
             (p274)
             LiveData를 관찰하고 이곳에서 UI 처리를 한다.
+
+            ====
+
+            (p333)
+            뷰 모델에 있는 사용자 목록 LiveData를 구독하고 데이터가 발행되었을 때
+            PagedListAdapter의 submitList() 메서드를 통해 사용자 목록 데이터를 전달할 수 있다.
+            (그런데 여기서는 GardenPlantingAdapter --> ListAdapter???)
          */
         viewModel.plantAndGardenPlantings.observe(viewLifecycleOwner) { result ->
             binding.hasPlantings = !result.isNullOrEmpty()
