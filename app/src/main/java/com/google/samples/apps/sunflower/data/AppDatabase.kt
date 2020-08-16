@@ -30,6 +30,7 @@ import com.google.samples.apps.sunflower.workers.SeedDatabaseWorker
 /**
  * The Room database for this app
  */
+// p307, 타입 컨버터 사용하기
 @Database(entities = [GardenPlanting::class, Plant::class], version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
