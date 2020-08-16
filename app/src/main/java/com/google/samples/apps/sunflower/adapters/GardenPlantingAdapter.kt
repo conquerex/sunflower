@@ -60,8 +60,18 @@ class GardenPlantingAdapter :
         }
 
         private fun navigateToPlant(plantId: String, view: View) {
+            /*
+                p365, 생성된 클래스에는 원래 목적지에 정의된 각 액션에 대한 정적 메서드가 포함된다.
+                 이 메서든는 정의된 액션 매개변수를 사용하고
+                 navigate() 메서드에 전달할 수 있는 NavDirections 오브젝트를 리턴한다.
+
+                Safe Args는 단일 메서드를 갖는 HomeViewPagerFragmentDirections 클래스를 생성한다.
+                 actionViewPagerFragmentToPlantDetailFragment() 메서드는
+                 NavDirections 객체를 반환하며 이 반환된 NavDirections 객체는 navigate() 메서드의 인자로 전달된다.
+             */
             val direction = HomeViewPagerFragmentDirections
                 .actionViewPagerFragmentToPlantDetailFragment(plantId)
+            // p364, 목적지로 이동하기
             view.findNavController().navigate(direction)
         }
 
