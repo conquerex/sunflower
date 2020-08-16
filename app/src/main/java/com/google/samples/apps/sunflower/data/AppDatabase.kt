@@ -55,7 +55,9 @@ abstract class AppDatabase : RoomDatabase() {
                     .addCallback(object : RoomDatabase.Callback() {
                         override fun onCreate(db: SupportSQLiteDatabase) {
                             super.onCreate(db)
+                            // p340, 일회성 WorkRequest
                             val request = OneTimeWorkRequestBuilder<SeedDatabaseWorker>().build()
+                            // p341, 시스템에 작업 전달하기
                             WorkManager.getInstance(context).enqueue(request)
                         }
                     })
